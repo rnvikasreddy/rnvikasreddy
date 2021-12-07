@@ -1,1 +1,29 @@
 Max Consecutive Ones
+
+a)
+class Solution:
+    def findMaxConsecutiveOnes(self, nums: List[int]) -> int:
+        if 1 not in nums: return 0
+        groups = [(key, len(list(group))) 
+                  for key, group in itertools.groupby(nums) if key == 1] 
+        return max(groups, key=lambda s: s[1])[1]
+        
+b)
+def getMaxLength(arr, n):
+	count = 0
+	result = 0
+
+	for i in range(0, n):
+		if (arr[i] == 0):
+			count = 0
+		else:
+			count+= 1
+			result = max(result, count)	
+	return result
+
+# Driver code
+arr = [1, 1, 0, 0, 1, 0, 1,
+			0, 1, 1, 1, 1]
+n = len(arr)
+
+print(getMaxLength(arr, n))
