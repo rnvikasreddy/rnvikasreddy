@@ -22,8 +22,7 @@ def getMaxLength(arr, n):
 	return result
 
 # Driver code
-arr = [1, 1, 0, 0, 1, 0, 1,
-			0, 1, 1, 1, 1]
+arr = [1, 1, 0, 0, 1, 0, 1, 0, 1, 1, 1, 1]
 n = len(arr)
 
 print(getMaxLength(arr, n))
